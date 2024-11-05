@@ -1,0 +1,32 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local PhantomForcesWindow = Library:NewWindow("OP")
+
+local KillingCheats = PhantomForcesWindow:NewSection("PREMIUM")
+
+KillingCheats:CreateButton("Slide", function()
+local args = {
+    [1] = workspace:WaitForChild("BallsInPlay"):WaitForChild("Ball"),
+    [2] = 20,
+    [3] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Slide"):FireServer(unpack(args))
+end)
+
+KillingCheats:CreateToggle("slide loop", function(gay)
+
+G_loop = gay
+
+while G_loop do
+
+local args = {
+    [1] = workspace:WaitForChild("BallsInPlay"):WaitForChild("Ball"),
+    [2] = 20,
+    [3] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Slide"):FireServer(unpack(args))
+wait(1)
+end
+end)
